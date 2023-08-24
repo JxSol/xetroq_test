@@ -1,0 +1,207 @@
+[
+  {
+    "model": "music.track",
+    "pk": 1,
+    "fields": {
+      "title": "Highway to Hell"
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 2,
+    "fields": {
+      "title": "T.N.T."
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 3,
+    "fields": {
+      "title": "Touch Too Much"
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 4,
+    "fields": {
+      "title": "My Humps"
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 5,
+    "fields": {
+      "title": "Pump It"
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 6,
+    "fields": {
+      "title": "Don't Phunk with My Heart"
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 7,
+    "fields": {
+      "title": "Clint Eastwood"
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 8,
+    "fields": {
+      "title": "Feel Good Inc."
+    }
+  },
+  {
+    "model": "music.track",
+    "pk": 9,
+    "fields": {
+      "title": "DARE"
+    }
+  },
+  {
+    "model": "music.performer",
+    "pk": 1,
+    "fields": {
+      "name": "AC/DC"
+    }
+  },
+  {
+    "model": "music.performer",
+    "pk": 2,
+    "fields": {
+      "name": "Black Eyed Peas"
+    }
+  },
+  {
+    "model": "music.performer",
+    "pk": 3,
+    "fields": {
+      "name": "Gorillaz"
+    }
+  },
+  {
+    "model": "music.album",
+    "pk": 1,
+    "fields": {
+      "release_year": 2005,
+      "performer": 3
+    }
+  },
+  {
+    "model": "music.album",
+    "pk": 2,
+    "fields": {
+      "release_year": 2001,
+      "performer": 3
+    }
+  },
+  {
+    "model": "music.album",
+    "pk": 3,
+    "fields": {
+      "release_year": 2005,
+      "performer": 2
+    }
+  },
+  {
+    "model": "music.album",
+    "pk": 4,
+    "fields": {
+      "release_year": 1979,
+      "performer": 1
+    }
+  },
+  {
+    "model": "music.album",
+    "pk": 5,
+    "fields": {
+      "release_year": 1975,
+      "performer": 1
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 1,
+    "fields": {
+      "album": 1,
+      "track": 8,
+      "track_position": 6
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 2,
+    "fields": {
+      "album": 1,
+      "track": 9,
+      "track_position": 12
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 3,
+    "fields": {
+      "album": 2,
+      "track": 7,
+      "track_position": 5
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 4,
+    "fields": {
+      "album": 3,
+      "track": 4,
+      "track_position": 5
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 5,
+    "fields": {
+      "album": 3,
+      "track": 5,
+      "track_position": 1
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 6,
+    "fields": {
+      "album": 3,
+      "track": 6,
+      "track_position": 2
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 7,
+    "fields": {
+      "album": 4,
+      "track": 1,
+      "track_position": 1
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 8,
+    "fields": {
+      "album": 4,
+      "track": 3,
+      "track_position": 4
+    }
+  },
+  {
+    "model": "music.albumtrack",
+    "pk": 9,
+    "fields": {
+      "album": 5,
+      "track": 2,
+      "track_position": 5
+    }
+  }
+]
