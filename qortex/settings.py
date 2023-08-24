@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,16 +33,21 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     #
     'applications.music',
     #
     # https://www.django-rest-framework.org
     'rest_framework',
+    # https://github.com/tfranzel/drf-spectacular
+    'drf_spectacular',
+    # https://github.com/adamchainz/django-cors-headers
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,3 +124,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Qortex API',
+    'DESCRIPTION': 'Test REST API for Qortex. This documentation has been generated automatically.',
+    'VERSION': '1.0.0',
+    'SERVERS': [{'url': 'http://localhost:8000'}],
+    #
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
+# https://github.com/adamchainz/django-cors-headers#cors_allowed_origin_regexes-sequencestr--patternstr
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^http://localhost[:\d/]*$",
+]
+# https://github.com/adamchainz/django-cors-headers#cors_urls_regex-str--patternstr
+CORS_URLS_REGEX = r"^/api/.*$"
