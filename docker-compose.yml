@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  backend:
+    container_name: qortex_django
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./schema.yml:/docs/schema.yml
+    networks:
+      - qortex_network
+    restart: always
+
+  docs:
+    container_name: qortex_swagger
+    image: swaggerapi/swagger-ui
+    ports:
+      - "80:8080"
+    environment:
+      - SWAGGER_JSON=/docs/schema.yml
+    volumes_from:
+      - backend
+    networks:
+      - qortex_network
+    depends_on:
+      - backend
+
+networks:
+  qortex_network:
+    name: qortex_network
