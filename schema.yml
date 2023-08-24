@@ -1,0 +1,600 @@
+openapi: 3.0.3
+info:
+  title: Qortex API
+  version: 1.0.0
+  description: Test REST API for Qortex
+paths:
+  /api/v1/albums/:
+    get:
+      operationId: api_v1_albums_list
+      description: API-представление для модели Album.
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Album'
+          description: ''
+    post:
+      operationId: api_v1_albums_create
+      description: API-представление для модели Album.
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Album'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Album'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+  /api/v1/albums/{id}/:
+    get:
+      operationId: api_v1_albums_retrieve
+      description: API-представление для модели Album.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this альбом.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+    put:
+      operationId: api_v1_albums_update
+      description: API-представление для модели Album.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this альбом.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Album'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Album'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+    patch:
+      operationId: api_v1_albums_partial_update
+      description: API-представление для модели Album.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this альбом.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAlbum'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAlbum'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAlbum'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+    delete:
+      operationId: api_v1_albums_destroy
+      description: API-представление для модели Album.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this альбом.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/v1/performers/:
+    get:
+      operationId: api_v1_performers_list
+      description: API-представление для модели Performer.
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Performer'
+          description: ''
+    post:
+      operationId: api_v1_performers_create
+      description: API-представление для модели Performer.
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Performer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Performer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Performer'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Performer'
+          description: ''
+  /api/v1/performers/{id}/:
+    get:
+      operationId: api_v1_performers_retrieve
+      description: API-представление для модели Performer.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this исполнитель.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Performer'
+          description: ''
+    put:
+      operationId: api_v1_performers_update
+      description: API-представление для модели Performer.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this исполнитель.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Performer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Performer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Performer'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Performer'
+          description: ''
+    patch:
+      operationId: api_v1_performers_partial_update
+      description: API-представление для модели Performer.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this исполнитель.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPerformer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPerformer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPerformer'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Performer'
+          description: ''
+    delete:
+      operationId: api_v1_performers_destroy
+      description: API-представление для модели Performer.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this исполнитель.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/v1/tracks/:
+    get:
+      operationId: api_v1_tracks_list
+      description: API-представление для модели Track.
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Track'
+          description: ''
+    post:
+      operationId: api_v1_tracks_create
+      description: API-представление для модели Track.
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Track'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Track'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Track'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Track'
+          description: ''
+  /api/v1/tracks/{id}/:
+    get:
+      operationId: api_v1_tracks_retrieve
+      description: API-представление для модели Track.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this песня.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Track'
+          description: ''
+    put:
+      operationId: api_v1_tracks_update
+      description: API-представление для модели Track.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this песня.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Track'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Track'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Track'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Track'
+          description: ''
+    patch:
+      operationId: api_v1_tracks_partial_update
+      description: API-представление для модели Track.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this песня.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTrack'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTrack'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTrack'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Track'
+          description: ''
+    delete:
+      operationId: api_v1_tracks_destroy
+      description: API-представление для модели Track.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this песня.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Album:
+      type: object
+      description: Сериализатор для модели Album.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        release_year:
+          type: integer
+          title: Год выпуска
+        performer:
+          type: integer
+          title: Исполнитель
+        album_tracks:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlbumTrack'
+      required:
+      - id
+      - performer
+      - release_year
+    AlbumTrack:
+      type: object
+      description: Сериализатор для модели AlbumTrack.
+      properties:
+        track:
+          type: integer
+          title: Песня
+        title:
+          type: string
+          readOnly: true
+        track_position:
+          type: integer
+          title: Порядковый номер песни в альбоме
+      required:
+      - title
+      - track
+      - track_position
+    PatchedAlbum:
+      type: object
+      description: Сериализатор для модели Album.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        release_year:
+          type: integer
+          title: Год выпуска
+        performer:
+          type: integer
+          title: Исполнитель
+        album_tracks:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlbumTrack'
+    PatchedPerformer:
+      type: object
+      description: Сериализатор для модели Performer.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Имя
+          maxLength: 255
+    PatchedTrack:
+      type: object
+      description: Сериализатор для модели Track.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          title: Название
+          maxLength: 50
+    Performer:
+      type: object
+      description: Сериализатор для модели Performer.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Имя
+          maxLength: 255
+      required:
+      - id
+      - name
+    Track:
+      type: object
+      description: Сериализатор для модели Track.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          title: Название
+          maxLength: 50
+      required:
+      - id
+      - title
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+servers:
+- url: http://localhost:8000
